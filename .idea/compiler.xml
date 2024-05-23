@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="memeland-cad-category" />
+        <module name="memeland-cad-user" />
+        <module name="memeland-cad-meme" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="memeland-cad-category" target="11" />
+      <module name="memeland-cad-meme" target="11" />
+      <module name="memeland-cad-user" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="memeland-cad-category" options="-parameters" />
+      <module name="memeland-cad-meme" options="-parameters" />
+      <module name="memeland-cad-user" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Memelandia.iml" filepath="$PROJECT_DIR$/.idea/Memelandia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/memeland-cad-category/memeland-cad-category.iml" filepath="$PROJECT_DIR$/memeland-cad-category/memeland-cad-category.iml" />
+      <module fileurl="file://$PROJECT_DIR$/memeland-cad-meme/memeland-cad-meme.iml" filepath="$PROJECT_DIR$/memeland-cad-meme/memeland-cad-meme.iml" />
+      <module fileurl="file://$PROJECT_DIR$/memeland-cad-user/memeland-cad-user.iml" filepath="$PROJECT_DIR$/memeland-cad-user/memeland-cad-user.iml" />
+    </modules>
+  </component>
+</project>
