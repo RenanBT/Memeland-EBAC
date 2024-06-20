@@ -1,7 +1,9 @@
 package br.betereli.memeland.cad_user.entities;
 
-import javax.persistence.*;
-import java.sql.Date;
+import jakarta.persistence.*;
+
+
+import java.util.Date;
 
 @Entity
 public class Usuario {

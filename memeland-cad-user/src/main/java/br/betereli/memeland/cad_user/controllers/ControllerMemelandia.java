@@ -10,7 +10,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/memeland/users")
 public class ControllerMemelandia {
-    @Autowired
+
+    @GetMapping("/caduser")
+    public String teste(){
+        return "Chamada Cad User";
+    }
+
+   @Autowired
     private ServicoMemelandia servicoMemelandia;
 
     @GetMapping

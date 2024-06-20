@@ -12,9 +12,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="memeland-cad-category" target="11" />
-      <module name="memeland-cad-meme" target="11" />
-      <module name="memeland-cad-user" target="11" />
+      <module name="memeland-cad-category" target="17" />
+      <module name="memeland-cad-meme" target="17" />
+      <module name="memeland-cad-user" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
