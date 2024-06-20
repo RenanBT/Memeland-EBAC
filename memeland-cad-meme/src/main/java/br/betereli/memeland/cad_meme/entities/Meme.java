@@ -19,30 +19,28 @@ public class Meme {
     @Column(name = "data_cadastro", nullable = false)
     private Date dataCadastro;
 
-    @ManyToOne
-    @JoinColumn(name = "categoria_meme_id")
-    private CategoriaMeme categoriaMeme;
+    @Column(name = "categoria_meme_id", nullable = false)
+    private Long categoriaMemeId;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    @Column(name = "usuario_id", nullable = false)
+    private Long usuarioId;
 
     public Meme() {}
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Long getCategoriaMemeId() {
+        return categoriaMemeId;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setCategoriaMemeId(Long categoriaMemeId) {
+        this.categoriaMemeId = categoriaMemeId;
     }
 
-    public CategoriaMeme getCategoriaMeme() {
-        return categoriaMeme;
+    public Long getUsuarioId() {
+        return usuarioId;
     }
 
-    public void setCategoriaMeme(CategoriaMeme categoriaMeme) {
-        this.categoriaMeme = categoriaMeme;
+    public void setUsuarioId(Long usuarioId) {
+        this.usuarioId = usuarioId;
     }
 
     public Long getId() {

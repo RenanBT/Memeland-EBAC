@@ -1,9 +1,8 @@
 package br.betereli.memeland.cad_meme.services;
 
-import br.betereli.memeland.cad_meme.entities.Meme;
-import br.betereli.memeland.cad_meme.repositories.RepositorioCategoriaMeme;
-import br.betereli.memeland.cad_meme.repositories.RepositorioMeme;
 import br.betereli.memeland.cad_meme.entities.CategoriaMeme;
+import br.betereli.memeland.cad_meme.entities.Meme;
+import br.betereli.memeland.cad_meme.repositories.RepositorioMeme;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,9 +14,6 @@ public class ServicoMemelandia {
     private RepositorioMeme repositorioMeme;
 
     @Autowired
-    private RepositorioCategoriaMeme repositorioCategoriaMeme;
-
-    @Autowired
     public Meme novoMeme(Meme meme) {
         return repositorioMeme.save(meme);
     }
@@ -26,11 +22,4 @@ public class ServicoMemelandia {
         return repositorioMeme.findAll();
     }
 
-    public CategoriaMeme novaCategoriaMeme(CategoriaMeme categoriaMeme) {
-        return repositorioCategoriaMeme.save(categoriaMeme);
-    }
-
-    public List<CategoriaMeme> listaTodasCategorias() {
-        return repositorioCategoriaMeme.findAll();
-    }
 }

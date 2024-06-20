@@ -1,7 +1,7 @@
 package br.betereli.memeland.cad_category.entities;
 
 import javax.persistence.*;
-import java.sql.Date;
+
 
 @Entity
 public class CategoriaMeme {

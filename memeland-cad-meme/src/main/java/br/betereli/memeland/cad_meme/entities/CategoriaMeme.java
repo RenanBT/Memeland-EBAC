@@ -1,35 +1,15 @@
 package br.betereli.memeland.cad_meme.entities;
 
 import javax.persistence.*;
-import java.sql.Date;
 
-@Entity
+
+
 public class CategoriaMeme {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence_categoria_meme")
-    @Column(name = "id", nullable = false)
+
     private Long id;
-
-    @Column(name = "nome", nullable = false)
     private String nome;
-
-    @Column(name = "descricao", nullable = false)
     private String descricao;
 
-    @Column(name = "data_cadastro", nullable = false)
-    private Date dataCadastro;
-
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
 
     public CategoriaMeme() {}
 
@@ -57,11 +37,4 @@ public class CategoriaMeme {
         this.descricao = descricao;
     }
 
-    public Date getDataCadastro() {
-        return dataCadastro;
-    }
-
-    public void setDataCadastro(Date dataCadastro) {
-        this.dataCadastro = dataCadastro;
-    }
 }
