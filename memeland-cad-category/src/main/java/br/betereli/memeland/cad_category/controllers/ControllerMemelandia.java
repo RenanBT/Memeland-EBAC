@@ -23,6 +23,11 @@ public class ControllerMemelandia {
         return servicoMemelandia.listaTodasCategorias();
     }
 
+    @GetMapping("/categorias/{id}")
+    public CategoriaMeme findCategoryById(@PathVariable Long id){
+        return servicoMemelandia.findCategoryById(id);
+    }
+
     @PostMapping("/categorias")
     public CategoriaMeme novaCategoria(@RequestBody CategoriaMeme categoriaMeme) {
         return servicoMemelandia.novaCategoriaMeme(categoriaMeme);

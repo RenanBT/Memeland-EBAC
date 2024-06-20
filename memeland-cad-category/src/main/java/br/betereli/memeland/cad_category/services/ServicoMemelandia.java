@@ -21,4 +21,8 @@ public class ServicoMemelandia {
     public List<CategoriaMeme> listaTodasCategorias() {
         return repositorioCategoriaMeme.findAll();
     }
+
+    public CategoriaMeme findCategoryById(Long id) {
+        return repositorioCategoriaMeme.findById(id).orElse(null);
+    }
 }
