@@ -1,6 +1,7 @@
 package br.betereli.memeland.cad_category.entities;
 
 import javax.persistence.*;
+import java.util.Date;
 
 
 @Entity
@@ -16,7 +17,16 @@ public class CategoriaMeme {
     @Column(name = "descricao", nullable = false)
     private String descricao;
 
+    @Column(name = "data_cadastro", nullable = false)
+    private Date dataCadastro;
 
+    public Date getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(Date dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
 
     public CategoriaMeme() {}
 

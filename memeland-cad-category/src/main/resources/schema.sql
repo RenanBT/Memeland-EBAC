@@ -5,5 +5,6 @@ CREATE TABLE categoria_meme (
   id BIGINT NOT NULL,
    nome VARCHAR(255) NOT NULL,
    descricao VARCHAR(255) NOT NULL,
+   data_cadastro date NOT NULL,
    CONSTRAINT pk_categoriameme PRIMARY KEY (id)
 );
