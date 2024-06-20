@@ -1,6 +1,7 @@
 package br.betereli.memeland.cad_category.entities;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.util.Date;
 
 
