@@ -24,4 +24,7 @@ public class ServicoMemelandia {
     }
 
 
+    public Usuario findUserById(Long id) {
+        return repositorioUsuario.findById(id).orElse(null);
+    }
 }

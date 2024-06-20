@@ -24,6 +24,11 @@ public class ControllerMemelandia {
         return servicoMemelandia.listaTodosUsuarios();
     }
 
+    @GetMapping("/{id}")
+    public Usuario findUserById(@PathVariable Long id){
+        return servicoMemelandia.findUserById(id);
+    }
+
     @PostMapping
     public Usuario novoUsuario(@RequestBody Usuario usuario) {
         return servicoMemelandia.novoUsuario(usuario);
