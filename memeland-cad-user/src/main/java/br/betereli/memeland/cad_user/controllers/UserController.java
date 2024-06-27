@@ -16,7 +16,7 @@ public class UserController {
     public Logger LOGGER = LoggerFactory.getLogger(UserController.class);
     @GetMapping("/users/caduser")
     public String teste(){
-        return "O Pedro é viado";
+        return "chamada cad user";
     }
 
    @Autowired
