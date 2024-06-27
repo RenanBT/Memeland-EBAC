@@ -1,6 +1,5 @@
 package br.betereli.memeland.cad_meme.entities;
 
-import javax.persistence.*;
 
 
 

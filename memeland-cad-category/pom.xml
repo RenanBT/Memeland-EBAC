@@ -8,7 +8,7 @@
 		<version>3.3.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.betereli.memeland.cad_user</groupId>
+	<groupId>br.betereli.memeland.cad_category</groupId>
 	<artifactId>memeland-cad-category</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>memeland-cad-category</name>

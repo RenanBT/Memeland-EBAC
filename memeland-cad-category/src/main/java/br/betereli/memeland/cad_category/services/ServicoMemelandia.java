@@ -4,10 +4,12 @@ import br.betereli.memeland.cad_category.entities.CategoriaMeme;
 import br.betereli.memeland.cad_category.repositories.RepositorioCategoriaMeme;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
+@Service
 @Component
 public class ServicoMemelandia {
 

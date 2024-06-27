@@ -1,7 +1,9 @@
 package br.betereli.memeland.cad_meme.entities;
 
-import javax.persistence.*;
-import java.sql.Date;
+import jakarta.persistence.*;
+
+import java.util.Date;
+
 
 @Entity
 public class Meme {
@@ -13,8 +15,8 @@ public class Meme {
     @Column(name = "nome", nullable = false)
     private String nome;
 
-    @Column(name = "descricao", nullable = false)
-    private String descricao;
+    @Column(name = "url", nullable = false)
+    private String url;
 
     @Column(name = "data_cadastro", nullable = false)
     private Date dataCadastro;
@@ -59,12 +61,12 @@ public class Meme {
         this.nome = nome;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getUrl() {
+        return url;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public Date getDataCadastro() {

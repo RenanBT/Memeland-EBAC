@@ -5,7 +5,8 @@ package br.betereli.memeland.cad_meme.entities;
 import java.util.Date;
 
 
-public class Usuario {
+public class
+Usuario {
 
     private Long id;
     private String nome;
