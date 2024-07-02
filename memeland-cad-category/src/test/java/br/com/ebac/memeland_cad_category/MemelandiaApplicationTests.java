@@ -3,6 +3,7 @@ package br.com.ebac.memeland_cad_category;
 import br.betereli.memeland.cad_category.MemelandiaApplication;
 import br.betereli.memeland.cad_category.entities.CategoriaMeme;
 import br.betereli.memeland.cad_category.repositories.RepositorioCategoriaMeme;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,11 @@ class MemelandiaApplicationTests {
 
 	@Autowired
 	private RepositorioCategoriaMeme repositorioCategoriaMeme;
+
+	@BeforeEach
+	void setUp() {
+		repositorioCategoriaMeme.deleteAll();
+	}
 
 	@DisplayName("Save Then Return Category List")
 	@Test
