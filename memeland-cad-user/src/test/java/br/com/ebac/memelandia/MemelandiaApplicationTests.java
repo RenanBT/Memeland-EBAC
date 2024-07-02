@@ -6,7 +6,6 @@ import br.betereli.memeland.cad_user.repositories.RepositorioUsuario;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Date;
@@ -53,8 +52,6 @@ class MemelandiaApplicationTests {
 		userTest2.setNome("Luisa");
 		userTest2.setEmail("luisa@test.com");
 		userTest2.setDataCadastro(new Date());
-
-
 		repositorioUsuario.save(userTest2);
 
 		List<Usuario> usuarioList = repositorioUsuario.findAll();
