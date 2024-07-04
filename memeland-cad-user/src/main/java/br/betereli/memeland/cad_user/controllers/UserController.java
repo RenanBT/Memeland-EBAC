@@ -24,6 +24,7 @@ public class UserController {
 
     @GetMapping ("/users")
     public List<Usuario> buscaUsuarios() {
+        LOGGER.info("Gerada lista com " + userService.listaTodosUsuarios().size() + "usuarios");
         return userService.listaTodosUsuarios();
     }
 
