@@ -45,5 +45,7 @@ public class ServicoMemelandia {
     }
 
 
-
+    public Meme findMemeById(Long id) {
+        return repositorioMeme.findById(id).orElse(null);
+    }
 }
