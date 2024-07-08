@@ -77,9 +77,9 @@ public class Meme {
         this.registryDate = registryDate;
     }
 
-    public void setUsuario(User user) {
+    public void setUser(User user) {
     }
 
-    public void setCategoria(memeCategory categoria) {
+    public void setCategory(memeCategory categoria) {
     }
 }

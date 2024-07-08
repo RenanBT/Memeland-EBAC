@@ -6,8 +6,8 @@ package br.betereli.memeland.cad_meme.entities;
 public class memeCategory {
 
     private Long id;
-    private String nome;
-    private String descricao;
+    private String name;
+    private String description;
 
 
     public memeCategory() {}
@@ -20,20 +20,20 @@ public class memeCategory {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 }

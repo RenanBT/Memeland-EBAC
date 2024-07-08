@@ -9,9 +9,9 @@ public class
 User {
 
     private Long id;
-    private String nome;
+    private String name;
     private String email;
-    private Date dataCadastro;
+    private Date registryDate;
 
     public User() {}
 
@@ -23,12 +23,12 @@ User {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -39,11 +39,11 @@ User {
         this.email = email;
     }
 
-    public Date getDataCadastro() {
-        return dataCadastro;
+    public Date getRegistryDate() {
+        return registryDate;
     }
 
-    public void setDataCadastro(Date dataCadastro) {
-        this.dataCadastro = dataCadastro;
+    public void setRegistryDate(Date registryDate) {
+        this.registryDate = registryDate;
     }
 }

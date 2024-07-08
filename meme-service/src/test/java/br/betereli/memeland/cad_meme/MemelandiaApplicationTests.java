@@ -43,14 +43,14 @@ class MemelandiaApplicationTests {
 	@Test
 	void SaveThenReturnNewMeme() {
 		when(user.getId()).thenReturn(1L);
-		when(user.getNome()).thenReturn("UserTest");
+		when(user.getName()).thenReturn("UserTest");
 
 		when(memeCategory.getId()).thenReturn(1L);
-		when(memeCategory.getNome()).thenReturn("CategoryTest");
+		when(memeCategory.getName()).thenReturn("CategoryTest");
 
 		Meme memeTest = new Meme();
-		memeTest.setUsuario(user);
-		memeTest.setCategoria(memeCategory);
+		memeTest.setUser(user);
+		memeTest.setCategory(memeCategory);
 		memeTest.setName("Meme Test");
 		memeTest.setUrl("www.test.com");
 		memeTest.setRegistryDate(new Date());
@@ -77,22 +77,22 @@ class MemelandiaApplicationTests {
 	void SaveThenReturnMemeList(){
 
 		when(user.getId()).thenReturn(1L);
-		when(user.getNome()).thenReturn("UserTest");
+		when(user.getName()).thenReturn("UserTest");
 
 		when(memeCategory.getId()).thenReturn(1L);
-		when(memeCategory.getNome()).thenReturn("CategoryTest");
+		when(memeCategory.getName()).thenReturn("CategoryTest");
 
 		Meme memeTest = new Meme();
-		memeTest.setUsuario(user);
-		memeTest.setCategoria(memeCategory);
+		memeTest.setUser(user);
+		memeTest.setCategory(memeCategory);
 		memeTest.setName("Meme Test");
 		memeTest.setUrl("www.test.com");
 		memeTest.setRegistryDate(new Date());
 		repositorioMeme.save(memeTest);
 
 		Meme memeTest1 = new Meme();
-		memeTest1.setUsuario(user);
-		memeTest1.setCategoria(memeCategory);
+		memeTest1.setUser(user);
+		memeTest1.setCategory(memeCategory);
 		memeTest1.setName("Meme Test 1");
 		memeTest1.setUrl("www.test1.com");
 		memeTest1.setRegistryDate(new Date());

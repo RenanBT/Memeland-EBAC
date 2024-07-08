@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/memelandia")
-public class ControllerMemelandia {
+@RequestMapping("/memeland")
+public class MemelandController {
 
-    public Logger LOGGER = LoggerFactory.getLogger(ControllerMemelandia.class);
+    public Logger LOGGER = LoggerFactory.getLogger(MemelandController.class);
     @Autowired
     private MemelandService memelandService;
 
@@ -27,20 +27,20 @@ public class ControllerMemelandia {
 
     @GetMapping("/meme/{id}")
     public Meme findMemeById(@PathVariable Long id){
-        LOGGER.info("Chamada meme por id: " + id);
+        LOGGER.info("Endpoint find meme by Id: " + id);
         return memelandService.findMemeById(id);
     }
 
 
     @GetMapping("/memes")
-    public List<MemeDTO> buscaMemes() {
-        LOGGER.info("Gerada lista com " + memelandService.listaTodosMemes().size() + " memes cadastrados");
-        return memelandService.listaTodosMemes();
+    public List<MemeDTO> findMemes() {
+        LOGGER.info("Generated list with all memes registered. " + memelandService.listAllMemes().size() + " memes registered");
+        return memelandService.listAllMemes();
     }
 
     @PostMapping("/memes")
-    public MemeDTO novoMeme(@RequestBody Meme meme) {
-        LOGGER.info("novo meme cadastrado Id:" + meme.getId() + "Nome: " + meme.getName());
+    public MemeDTO newMeme(@RequestBody Meme meme) {
+        LOGGER.info("new meme registered Id:" + meme.getId() + "Name: " + meme.getName());
         return memelandService.newMeme(meme);
     }
 }

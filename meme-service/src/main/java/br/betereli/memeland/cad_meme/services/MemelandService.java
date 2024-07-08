@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class MemelandService {
     @Autowired
-    private MemeRepository repositorioMeme;
+    private MemeRepository memeRepository;
     @Autowired
     private CategoryClient categoryClient;
     @Autowired
@@ -25,17 +25,17 @@ public class MemelandService {
 
     public MemeDTO newMeme(Meme meme) {
         meme.setRegistryDate(new Date());
-        Meme savedMeme = repositorioMeme.save(meme);
+        Meme savedMeme = memeRepository.save(meme);
          return getMemeDTO(savedMeme);
     }
 
-    public List<MemeDTO> listaTodosMemes() {
-        List<Meme> listaMeme = repositorioMeme.findAll();
-        List<MemeDTO> listaDTO = new ArrayList<>();
-        listaMeme.forEach(meme -> {
-            listaDTO.add(getMemeDTO(meme));
+    public List<MemeDTO> listAllMemes() {
+        List<Meme> memeList = memeRepository.findAll();
+        List<MemeDTO> listDTO = new ArrayList<>();
+        memeList.forEach(meme -> {
+            listDTO.add(getMemeDTO(meme));
         });
-        return listaDTO;
+        return listDTO;
     }
 
     private MemeDTO getMemeDTO(Meme meme) {
@@ -46,6 +46,6 @@ public class MemelandService {
 
 
     public Meme findMemeById(Long id) {
-        return repositorioMeme.findById(id).orElse(null);
+        return memeRepository.findById(id).orElse(null);
     }
 }

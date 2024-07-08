@@ -7,17 +7,17 @@ public class MemeDTO {
     private String name;
     private String url;
     private Date registryDate;
-    private memeCategory categoria;
+    private memeCategory category;
     private User user;
 
     //public MemeDTO() {}
 
     public MemeDTO(Meme meme, memeCategory memeCategory, User user) {
         setId(meme.getId());
-        setNome(meme.getName());
+        setName(meme.getName());
         setUrl(meme.getUrl());
-        setDataCadastro(meme.getRegistryDate());
-        setCategoria(memeCategory);
+        setRegistryDate(meme.getRegistryDate());
+        setCategory(memeCategory);
         setUsuario(user);
     }
 
@@ -34,7 +34,7 @@ public class MemeDTO {
         return name;
     }
 
-    public void setNome(String nome) {
+    public void setName(String nome) {
         this.name = nome;
     }
 
@@ -50,16 +50,16 @@ public class MemeDTO {
         return registryDate;
     }
 
-    public void setDataCadastro(Date dataCadastro) {
+    public void setRegistryDate(Date dataCadastro) {
         this.registryDate = dataCadastro;
     }
 
-    public memeCategory getCategoria() {
-        return categoria;
+    public memeCategory getCategory() {
+        return category;
     }
 
-    public void setCategoria(memeCategory categoria) {
-        this.categoria = categoria;
+    public void setCategory(memeCategory category) {
+        this.category = category;
     }
 
     public User getUsuario() {
