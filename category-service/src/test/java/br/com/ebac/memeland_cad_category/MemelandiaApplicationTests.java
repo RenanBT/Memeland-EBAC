@@ -1,8 +1,8 @@
 package br.com.ebac.memeland_cad_category;
 
 import br.betereli.memeland.cad_category.MemelandiaApplication;
-import br.betereli.memeland.cad_category.entities.CategoriaMeme;
-import br.betereli.memeland.cad_category.repositories.RepositorioCategoriaMeme;
+import br.betereli.memeland.cad_category.entities.MemeCategory;
+import br.betereli.memeland.cad_category.repositories.CategoryRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -18,49 +18,49 @@ import static org.junit.jupiter.api.Assertions.*;
 class MemelandiaApplicationTests {
 
 	@Autowired
-	private RepositorioCategoriaMeme repositorioCategoriaMeme;
+	private CategoryRepository categoryRepository;
 
 	@BeforeEach
 	void setUp() {
-		repositorioCategoriaMeme.deleteAll();
+		categoryRepository.deleteAll();
 	}
 
 	@DisplayName("Save Then Return Category List")
 	@Test
 	void SaveThenReturnCategoryList() {
-		CategoriaMeme categoriaTest = new CategoriaMeme();
-		categoriaTest.setNome("Categoria Teste");
-		categoriaTest.setDescricao("Categoria para testar");
-		categoriaTest.setDataCadastro(new Date());
-		repositorioCategoriaMeme.save(categoriaTest);
+		MemeCategory categoriaTest = new MemeCategory();
+		categoriaTest.setName("Categoria Teste");
+		categoriaTest.setDescription("Categoria para testar");
+		categoriaTest.setRegistryDate(new Date());
+		categoryRepository.save(categoriaTest);
 
-		CategoriaMeme categoriaTest1 = new CategoriaMeme();
-		categoriaTest1.setNome("Categoria Teste 1");
-		categoriaTest1.setDescricao("Categoria para testar 1");
-		categoriaTest1.setDataCadastro(new Date());
-		repositorioCategoriaMeme.save(categoriaTest1);
+		MemeCategory categoriaTest1 = new MemeCategory();
+		categoriaTest1.setName("Categoria Teste 1");
+		categoriaTest1.setDescription("Categoria para testar 1");
+		categoriaTest1.setRegistryDate(new Date());
+		categoryRepository.save(categoriaTest1);
 
-		CategoriaMeme categoriaTest2 = new CategoriaMeme();
-		categoriaTest2.setNome("Categoria Teste 2");
-		categoriaTest2.setDescricao("Categoria para testar 2");
-		categoriaTest2.setDataCadastro(new Date());
-		repositorioCategoriaMeme.save(categoriaTest2);
+		MemeCategory categoriaTest2 = new MemeCategory();
+		categoriaTest2.setName("Categoria Teste 2");
+		categoriaTest2.setDescription("Categoria para testar 2");
+		categoriaTest2.setRegistryDate(new Date());
+		categoryRepository.save(categoriaTest2);
 
-		List<CategoriaMeme> categoriaMemeList = repositorioCategoriaMeme.findAll();
+		List<MemeCategory> memeCategoryList = categoryRepository.findAll();
 
-		assertNotNull(categoriaMemeList);
-		assertEquals(3, categoriaMemeList.size());
+		assertNotNull(memeCategoryList);
+		assertEquals(3, memeCategoryList.size());
 	}
 
 	@DisplayName("Save Then Return New Category")
 	@Test
 	void SaveThenReturnNewCategory() {
-		CategoriaMeme categoriaTest = new CategoriaMeme();
-		categoriaTest.setNome("Categoria Teste");
-		categoriaTest.setDescricao("Categoria para testar");
-		categoriaTest.setDataCadastro(new Date());
+		MemeCategory categoriaTest = new MemeCategory();
+		categoriaTest.setName("Categoria Teste");
+		categoriaTest.setDescription("Categoria para testar");
+		categoriaTest.setRegistryDate(new Date());
 
-		CategoriaMeme categoriaSalva = repositorioCategoriaMeme.save(categoriaTest);
+		MemeCategory categoriaSalva = categoryRepository.save(categoriaTest);
 
 		assertNotNull(categoriaSalva);
 		assertTrue(categoriaSalva.getId() > 0);
@@ -69,14 +69,14 @@ class MemelandiaApplicationTests {
 	@DisplayName("Save Then Return Category by Id")
 	@Test
 	void SaveThenReturnCategoryById() {
-		CategoriaMeme categoriaTest = new CategoriaMeme();
-		categoriaTest.setNome("Categoria Teste");
-		categoriaTest.setDescricao("Categoria para testar");
-		categoriaTest.setDataCadastro(new Date());
+		MemeCategory categoriaTest = new MemeCategory();
+		categoriaTest.setName("Categoria Teste");
+		categoriaTest.setDescription("Categoria para testar");
+		categoriaTest.setRegistryDate(new Date());
 
-		repositorioCategoriaMeme.save(categoriaTest);
+		categoryRepository.save(categoriaTest);
 
-		CategoriaMeme categoriaSalva = repositorioCategoriaMeme.findById(categoriaTest.getId()).get();
+		MemeCategory categoriaSalva = categoryRepository.findById(categoriaTest.getId()).get();
 
 		assertNotNull(categoriaSalva);
 		assertEquals( categoriaTest.getId(), categoriaSalva.getId());

@@ -4,8 +4,7 @@ package br.betereli.memeland.cad_meme.controllers;
 
 import br.betereli.memeland.cad_meme.entities.Meme;
 import br.betereli.memeland.cad_meme.entities.MemeDTO;
-import br.betereli.memeland.cad_meme.services.ServicoMemelandia;
-import org.apache.juli.logging.Log;
+import br.betereli.memeland.cad_meme.services.MemelandService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ public class ControllerMemelandia {
 
     public Logger LOGGER = LoggerFactory.getLogger(ControllerMemelandia.class);
     @Autowired
-    private ServicoMemelandia servicoMemelandia;
+    private MemelandService memelandService;
 
     @GetMapping("/test")
     public String teste(){
@@ -29,19 +28,19 @@ public class ControllerMemelandia {
     @GetMapping("/meme/{id}")
     public Meme findMemeById(@PathVariable Long id){
         LOGGER.info("Chamada meme por id: " + id);
-        return servicoMemelandia.findMemeById(id);
+        return memelandService.findMemeById(id);
     }
 
 
     @GetMapping("/memes")
     public List<MemeDTO> buscaMemes() {
-        LOGGER.info("Gerada lista com " + servicoMemelandia.listaTodosMemes().size() + " memes cadastrados");
-        return servicoMemelandia.listaTodosMemes();
+        LOGGER.info("Gerada lista com " + memelandService.listaTodosMemes().size() + " memes cadastrados");
+        return memelandService.listaTodosMemes();
     }
 
     @PostMapping("/memes")
     public MemeDTO novoMeme(@RequestBody Meme meme) {
-        LOGGER.info("novo meme cadastrado Id:" + meme.getId() + "Nome: " + meme.getNome());
-        return servicoMemelandia.novoMeme(meme);
+        LOGGER.info("novo meme cadastrado Id:" + meme.getId() + "Nome: " + meme.getName());
+        return memelandService.newMeme(meme);
     }
 }

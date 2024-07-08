@@ -1,10 +1,10 @@
 
-CREATE SEQUENCE sequence_categoria_meme START WITH 1 INCREMENT BY 50;
+CREATE SEQUENCE meme_category_sequence START WITH 1 INCREMENT BY 50;
 
-CREATE TABLE categoria_meme (
-  id BIGINT NOT NULL,
-   nome VARCHAR(255) NOT NULL,
-   descricao VARCHAR(255) NOT NULL,
-   data_cadastro date NOT NULL,
-   CONSTRAINT pk_categoriameme PRIMARY KEY (id)
+CREATE TABLE MEME_CATEGORY (
+   id BIGINT NOT NULL,
+   name VARCHAR(255) NOT NULL,
+   description VARCHAR(255) NOT NULL,
+   registry_date TIMESTAMP NOT NULL,
+   CONSTRAINT pk_memecategory PRIMARY KEY (id)
 );

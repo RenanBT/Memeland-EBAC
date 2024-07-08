@@ -3,14 +3,14 @@ package br.betereli.memeland.cad_meme.entities;
 
 
 
-public class CategoriaMeme {
+public class memeCategory {
 
     private Long id;
     private String nome;
     private String descricao;
 
 
-    public CategoriaMeme() {}
+    public memeCategory() {}
 
     public Long getId() {
         return id;

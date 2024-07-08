@@ -6,14 +6,14 @@ import java.util.Date;
 
 
 public class
-Usuario {
+User {
 
     private Long id;
     private String nome;
     private String email;
     private Date dataCadastro;
 
-    public Usuario() {}
+    public User() {}
 
     public Long getId() {
         return id;

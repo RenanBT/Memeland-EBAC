@@ -12,37 +12,37 @@ public class Meme {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "nome", nullable = false)
-    private String nome;
+    @Column(name = "name", nullable = false)
+    private String name;
 
     @Column(name = "url", nullable = false)
     private String url;
 
-    @Column(name = "data_cadastro", nullable = false)
-    private Date dataCadastro;
+    @Column(name = "registry_date", nullable = false)
+    private Date registryDate;
 
     @Column(name = "categoria_meme_id", nullable = false)
-    private Long categoriaMemeId;
+    private Long memeCategoryId;
 
     @Column(name = "usuario_id", nullable = false)
-    private Long usuarioId;
+    private Long userId;
 
     public Meme() {}
 
-    public Long getCategoriaMemeId() {
-        return categoriaMemeId;
+    public Long getMemeCategoryId() {
+        return memeCategoryId;
     }
 
-    public void setCategoriaMemeId(Long categoriaMemeId) {
-        this.categoriaMemeId = categoriaMemeId;
+    public void setMemeCategoryId(Long memeCategoryId) {
+        this.memeCategoryId = memeCategoryId;
     }
 
-    public Long getUsuarioId() {
-        return usuarioId;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUsuarioId(Long usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Long getId() {
@@ -53,12 +53,12 @@ public class Meme {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getUrl() {
@@ -69,17 +69,17 @@ public class Meme {
         this.url = url;
     }
 
-    public Date getDataCadastro() {
-        return dataCadastro;
+    public Date getRegistryDate() {
+        return registryDate;
     }
 
-    public void setDataCadastro(Date dataCadastro) {
-        this.dataCadastro = dataCadastro;
+    public void setRegistryDate(Date registryDate) {
+        this.registryDate = registryDate;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(User user) {
     }
 
-    public void setCategoria(CategoriaMeme categoria) {
+    public void setCategoria(memeCategory categoria) {
     }
 }

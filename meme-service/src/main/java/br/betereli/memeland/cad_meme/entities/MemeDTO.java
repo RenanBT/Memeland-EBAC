@@ -4,21 +4,21 @@ import java.util.Date;
 
 public class MemeDTO {
     private Long id;
-    private String nome;
+    private String name;
     private String url;
-    private Date dataCadastro;
-    private CategoriaMeme categoria;
-    private Usuario usuario;
+    private Date registryDate;
+    private memeCategory categoria;
+    private User user;
 
     //public MemeDTO() {}
 
-    public MemeDTO(Meme meme, CategoriaMeme categoriaMeme, Usuario usuario) {
+    public MemeDTO(Meme meme, memeCategory memeCategory, User user) {
         setId(meme.getId());
-        setNome(meme.getNome());
+        setNome(meme.getName());
         setUrl(meme.getUrl());
-        setDataCadastro(meme.getDataCadastro());
-        setCategoria(categoriaMeme);
-        setUsuario(usuario);
+        setDataCadastro(meme.getRegistryDate());
+        setCategoria(memeCategory);
+        setUsuario(user);
     }
 
 
@@ -31,11 +31,11 @@ public class MemeDTO {
     }
 
     public String getNome() {
-        return nome;
+        return name;
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.name = nome;
     }
 
     public String getUrl() {
@@ -47,27 +47,27 @@ public class MemeDTO {
     }
 
     public Date getDataCadastro() {
-        return dataCadastro;
+        return registryDate;
     }
 
     public void setDataCadastro(Date dataCadastro) {
-        this.dataCadastro = dataCadastro;
+        this.registryDate = dataCadastro;
     }
 
-    public CategoriaMeme getCategoria() {
+    public memeCategory getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(CategoriaMeme categoria) {
+    public void setCategoria(memeCategory categoria) {
         this.categoria = categoria;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public User getUsuario() {
+        return user;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuario(User user) {
+        this.user = user;
     }
 
 

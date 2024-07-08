@@ -2,11 +2,11 @@ package br.betereli.memeland.cad_meme.services;
 
 import br.betereli.memeland.cad_meme.clients.CategoryClient;
 import br.betereli.memeland.cad_meme.clients.UserClient;
-import br.betereli.memeland.cad_meme.entities.CategoriaMeme;
+import br.betereli.memeland.cad_meme.entities.memeCategory;
 import br.betereli.memeland.cad_meme.entities.Meme;
 import br.betereli.memeland.cad_meme.entities.MemeDTO;
-import br.betereli.memeland.cad_meme.entities.Usuario;
-import br.betereli.memeland.cad_meme.repositories.RepositorioMeme;
+import br.betereli.memeland.cad_meme.entities.User;
+import br.betereli.memeland.cad_meme.repositories.MemeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,16 +15,16 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class ServicoMemelandia {
+public class MemelandService {
     @Autowired
-    private RepositorioMeme repositorioMeme;
+    private MemeRepository repositorioMeme;
     @Autowired
     private CategoryClient categoryClient;
     @Autowired
     private UserClient userClient;
 
-    public MemeDTO novoMeme(Meme meme) {
-        meme.setDataCadastro(new Date());
+    public MemeDTO newMeme(Meme meme) {
+        meme.setRegistryDate(new Date());
         Meme savedMeme = repositorioMeme.save(meme);
          return getMemeDTO(savedMeme);
     }
@@ -39,9 +39,9 @@ public class ServicoMemelandia {
     }
 
     private MemeDTO getMemeDTO(Meme meme) {
-        CategoriaMeme categoriaMeme = categoryClient.findCategoryById(meme.getCategoriaMemeId());
-        Usuario usuario = userClient.findUserById(meme.getUsuarioId());
-        return new MemeDTO(meme, categoriaMeme, usuario);
+        memeCategory memeCategory = categoryClient.findCategoryById(meme.getMemeCategoryId());
+        User user = userClient.findUserById(meme.getUserId());
+        return new MemeDTO(meme, memeCategory, user);
     }
 
 
